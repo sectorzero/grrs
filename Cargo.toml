@@ -13,3 +13,5 @@ rand = "0.7.2"
 indicatif = {version = "*", features = ["with_rayon"]} 
 rayon = "1.2.1"
 num_cpus = "1.11.1"
+log = "0.4.8"
+env_logger = "0.7.1"

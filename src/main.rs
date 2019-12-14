@@ -16,7 +16,7 @@ extern crate num_cpus;
 
 use rayon::iter::{IntoParallelRefIterator, ParallelIterator};
 
-
+use log::{info};
 
 #[derive(StructOpt, Debug)]
 struct SearchInput {
@@ -28,11 +28,14 @@ struct SearchInput {
 }
 
 fn main() -> Result<(), Error> {
-    println!("Hello, GRRS!");
+
+    env_logger::init();
+
+    info!("Hello, GRRS!");
 
     // how is the error returned from here?
     let args = SearchInput::from_args();
-    println!("{:?}", args);
+    info!("{:?}", args);
 
     /* unbuffered impl
     // reading from file to string
@@ -102,6 +105,7 @@ fn do_some_thread_work() {
             //work_assigned_count += t_work_count;
 
             t_handles.push(spawn(move || {
+                info!("starting thread");
                 let t_rng = thread_rng();
                 let mut t_wait_times = Uniform::new_inclusive(100, 1000).sample_iter(t_rng);
 
