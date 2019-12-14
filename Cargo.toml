@@ -10,4 +10,6 @@ edition = "2018"
 structopt = "0.3.5"
 failure = "0.1.6"
 rand = "0.7.2"
-indicatif = "0.13.0"
+indicatif = {version = "*", features = ["with_rayon"]} 
+rayon = "1.2.1"
+num_cpus = "1.11.1"
