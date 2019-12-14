@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug",
+            "type": "lldb",
+            "request": "launch",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=grrs",
+                    "--package=grrs"
+                ],
+                "filter": {
+                    "name": "grrs",
+                    "kind": "bin"
+                }
+            },
+            "args": ["Dickens", "input/46.txt"],
+            "cwd": "${workspaceFolder}",
+            "sourceMap": {"/rustc/4560ea788cb760f0a34127156c78e2552949f734/": "/Users/sectorzero/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/"},
+            "sourceLanguages": ["rust"]
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "UnitTestDebug",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=grrs",
+                    "--package=grrs"
+                ],
+                "filter": {
+                    "name": "grrs",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
